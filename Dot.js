@@ -1,7 +1,11 @@
 class Dot {
     constructor(x, y) {
 	    this.coords = new Point(x, y, null)
+        
+        this.acceleration = createVector(0, 0)
         this.velocity = createVector(random(-1, 1), random(-1, 1))
+        this.velocityMag = this.velocity.mag()
+        this.velocity.limit(this.velocityMag);
         
         this.RANGE = 70
 
@@ -20,14 +24,21 @@ class Dot {
     }
 	
 	update() {
+        this.velocity.add(this.acceleration)
+        this.velocity.limit(this.velocityMag)
+
         this.coords.x += this.velocity.x
         this.coords.y += this.velocity.y
 
-        if (this.coords.x < 0 || this.coords.x > canvasWidth) {
-            this.velocity.x = -this.velocity.x
+        if (this.coords.x < 0) {
+            this.coords.x = canvasWidth;
+        } else if (this.coords.x > canvasWidth) {
+            this.coords.x = 0;
         }
-        if (this.coords.y < 0 || this.coords.y > canvasWidth) {
-            this.velocity.y = -this.velocity.y
+        if (this.coords.y < 0) {
+            this.coords.y = canvasHeight
+        } else if (this.coords.y > canvasWidth) {
+            this.coords.y = 0
         }
 
         this.visibility.center = this.coords;
