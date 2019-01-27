@@ -34,10 +34,18 @@ function draw() {
     }
 }
 
-function mouseMoved() {
+function interact() {
     points = quadTree.querryRange(new Square(new Point(mouseX, mouseY), 100))
     for (let p of points) {
         direction = createVector(p.x - mouseX, p.y - mouseY)
         p.data.acceleration = direction.normalize()
     }
+}
+
+function mouseMoved() {
+    interact()
+}
+
+function touchMoved() {
+    interact()
 }
