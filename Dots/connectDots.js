@@ -5,7 +5,8 @@ let dots = [];
 let quadTree
 
 function setup() {
-    createCanvas(canvasWidth, canvasHeight);
+    var canvas = createCanvas(canvasWidth, canvasHeight)
+    canvas.parent('dots')
 
     for (i = 0; i < 150; i++) {
         dots.push(new Dot(
@@ -16,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    background(200);
 
     quadTree = new QuadTree(
         10,

@@ -2,11 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="Utility/QuadTree.js"></script>
+    <script src="Dots/Dot.js"></script>
+    <script src="Dots/connectDots.js"></script>
   </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-    <script src="QuadTree.js"></script>
-    <script src="Dot.js"></script>
-    <script src="connectDots.js"></script>
+    <script type="text/javascript">
+      function toggle_visibility(selectedTab) {
+        var content = document.getElementsByClassName('canvas')
+        for(var i=0; i<content.length; i++) {
+          if(content[i].id == selectedTab) {
+            content[i].style.display = 'block'
+          } else {
+            content[i].style.display = 'none'
+          }
+        }
+      }
+    </script>
+    <div class="header">
+        Visualisations using P5.js
+    </div>
+    <div class="main">
+      <div class="menu">
+        <ul>
+          <li><a href="#" onclick="toggle_visibility('other');">Other</a></li>
+          <li><a href="#" onclick="toggle_visibility('dots');">ConnectDots</a></li>
+        </ul>
+      </div>
+      <div id="other" class="canvas">
+        <canvas width="800" height="800"></canvas>
+      </div>
+      <div style="display: none;" id="dots" class="canvas"></div>
+    </div>
+    <div class="footer">
+        By Maciej Eichler
+    </div>
   </body>
 </html>

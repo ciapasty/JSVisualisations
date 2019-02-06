@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(52, 52, 52);
+    color: white;
+}
+
+div.main {
+    margin: auto;
+    width: 1000px;
+}
+
+div.menu {
+    float: left;
+    width: 200px;
+    height: 800px;
+    color: rgb(40, 40, 40);
+    background-color: rgb(200, 200, 200);
+}
+
+div.canvas {
+    display: block;
+    float: right;
+    width: 800px;
+    height: 800px;
+    background-color: blueviolet;
+}
+
+div.header {
+    margin: auto;
+    width: 1000px;
+    padding: 30px;
+    text-align: left;
+    font-size: 40px;
+}
+
+div.footer {
+    margin: auto;
+    width: 1000px;
+    padding: 30px;
+    text-align: center;
+}
