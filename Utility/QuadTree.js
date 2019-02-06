@@ -111,17 +111,6 @@ class QuadTree {
 
         return pointsArray
     }
-
-    // Debug
-    draw() {
-        this.boundary.draw()
-        if (this.northWest !== undefined) {
-            this.northWest.draw()
-            this.northEast.draw()
-            this.southWest.draw()
-            this.southEast.draw()
-        }
-    }
 }
 
 class Point {
@@ -163,20 +152,5 @@ class Square {
             A.x < (B.x + BLen) && (A.x + ALen) > B.x &&
             A.y < (B.y + BLen) && (A.y + ALen) > B.y
         )
-    }
-
-    draw() {
-        push()
-        stroke(100, 100, 100, 100)
-        strokeWeight(1)
-        noFill()
-        rectMode(CENTER)
-        rect(
-            this.center.x,
-            this.center.y,
-            this.halfDimention * 2,
-            this.halfDimention * 2
-        )
-        pop()
     }
 }

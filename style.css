@@ -2,13 +2,13 @@ body {
     background-color: rgb(52, 52, 52);
     color: white;
 }
-
-div.main {
+div,
+.main {
     margin: auto;
     width: 1000px;
 }
 
-div.menu {
+.menu {
     float: left;
     width: 200px;
     height: 800px;
@@ -16,7 +16,7 @@ div.menu {
     background-color: rgb(200, 200, 200);
 }
 
-div.canvas {
+.canvas {
     display: block;
     float: right;
     width: 800px;
@@ -24,7 +24,7 @@ div.canvas {
     background-color: blueviolet;
 }
 
-div.header {
+.header {
     margin: auto;
     width: 1000px;
     padding: 30px;
@@ -32,9 +32,22 @@ div.header {
     font-size: 40px;
 }
 
-div.footer {
+.footer {
     margin: auto;
     width: 1000px;
     padding: 30px;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+a:link {
+    color: inherit;
+}
+a:visited {
+    color: inherit;
+}
+a:hover {
+    color: inherit;
 }

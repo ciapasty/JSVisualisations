@@ -1,9 +1,14 @@
 class Dot {
-    constructor(x, y) {
+    constructor(p, x, y) {
+        this.p = p;
+
 	    this.coords = new Point(x, y, null)
         
-        this.acceleration = createVector(0, 0)
-        this.velocity = createVector(random(-1, 1), random(-1, 1))
+        this.acceleration = this.p.createVector(0, 0)
+        this.velocity = this.p.createVector(
+            this.p.random(-1, 1),
+            this.p.random(-1, 1)
+        )
         this.velocityMag = this.velocity.mag()
         this.velocity.limit(this.velocityMag);
         
@@ -15,10 +20,10 @@ class Dot {
     connect(quadTree) {
         var points = quadTree.querryRange(this.visibility)
         for (var i in points) {
-            if (dist(this.coords.x, this.coords.y, points[i].x, points[i].y) < this.RANGE) {
-                stroke(200,100,100,50)
-                strokeWeight(1)
-                line(this.coords.x, this.coords.y, points[i].x, points[i].y);
+            if (this.p.dist(this.coords.x, this.coords.y, points[i].x, points[i].y) < this.RANGE) {
+                this.p.stroke(200,100,100,50)
+                this.p.strokeWeight(1)
+                this.p.line(this.coords.x, this.coords.y, points[i].x, points[i].y);
             }
         }
     }
@@ -47,9 +52,9 @@ class Dot {
     }
 
     draw() {
-        stroke(0)
-        fill(0)
-        strokeWeight(2)
-        ellipse(this.coords.x, this.coords.y, 1, 1)
+        this.p.stroke(0)
+        this.p.fill(0)
+        this.p.strokeWeight(2)
+        this.p.ellipse(this.coords.x, this.coords.y, 1, 1)
     }
 }

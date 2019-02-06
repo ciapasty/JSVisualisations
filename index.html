@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
     <script src="Utility/QuadTree.js"></script>
     <script src="Dots/Dot.js"></script>
-    <script src="Dots/connectDots.js"></script>
+    <script src="p5sketches.js"></script>
   </head>
   <body>
     <script type="text/javascript">
@@ -27,13 +27,11 @@
     <div class="main">
       <div class="menu">
         <ul>
-          <li><a href="#" onclick="toggle_visibility('other');">Other</a></li>
+          <li><a href="#" onclick="toggle_visibility('textFall');">TextFall</a></li>
           <li><a href="#" onclick="toggle_visibility('dots');">ConnectDots</a></li>
         </ul>
       </div>
-      <div id="other" class="canvas">
-        <canvas width="800" height="800"></canvas>
-      </div>
+      <div id="textFall" class="canvas"></div>
       <div style="display: none;" id="dots" class="canvas"></div>
     </div>
     <div class="footer">
